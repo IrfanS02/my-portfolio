@@ -1,75 +1,142 @@
 header {
-    height: 100vh;
-    overflow: auto;
-    padding-top: 7rem;
+  height: 100vh;
+  padding-top: 4rem;
+  overflow: auto;
+  position: relative;
 }
+
 .header_container {
-    text-align: center;
-    height: 100%;
-    position: relative;
-}
-/* =============================CTA============================*/
-.cta{
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-
-}
-/* =============================Header socials============================*/
-.header_socials{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    position: absolute;
-    bottom: 3rem;
-    left: 0;
+  text-align: center;
+  height: 100%;
+  position: relative;
 }
 
-.header_socials::after{
-    content: "";
-    width: 1px;
-    height: 2rem;
-    background: var(--color-primary);
+.header_container h1 {
+  font-size: 2.7rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-white));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
 }
-/* =============================ME============================*/
+
+/* CTA STYLES */
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+/* HEADER SOCIALS */
+.header_socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.header_socials::after {
+  content: '';
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+.header_socials a {
+  background: var(--color-bg-variant);
+  color: var(--color-primary);
+  padding: 0.6rem;
+  border-radius: 50%;
+  display: flex;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header_socials a:hover {
+  background: var(--color-primary);
+  color: var(--color-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ME IMAGE STYLES */
 .me {
-    background: linear-gradient(var(--color-primary), transparent);
-    width: 22rem;
-    height: 30rem;
-    position: absolute;
-    border-radius: 12rem 12rem 0 0;
-    overflow: hidden;
-    padding: 5rem 1.5rem 1.5rem 1.5rem;
-    margin-top: 4rem;
-    left: calc(50% - 11rem);
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  transition: var(--transition);
+}
+
+.me:hover {
+  transform: translateX(-50%) scale(1.05);
+}
+
+.me img {
+  height: 100%;
+  object-fit: cover;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+/* SCROLL DOWN */
+.scroll_down {
+  position: absolute;
+  right: -2.3rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.scroll_down::after {
+  content: '⟶';
+  margin-left: 0.7rem;
+  font-size: 1.2rem;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px) {
+  header {
+    height: 68vh;
+  }
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+  header {
+    height: 100vh;
   }
   
-/* =============================Scroll Down============================*/
-.scroll_down{
-    position: absolute;
-    right: -2.3rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-/* =====================================Media Queries (Medium Devices) ===================== */
-@media screen and (max-width : 1024px) {
-    header{
-        height: 68vh;
-    }
-    
-    
-}
-/* =====================================Media Queries (Small Devices) ===================== */
-@media screen and (max-width : 600px) {
-    header{
-        height: 100vh;
-    }
-    .header_socials,
-    .scroll_down{
-        display: none;
-    }
+  .header_socials, .scroll_down {
+    display: none;
+  }
+  
+  .me {
+    width: 18rem;
+    height: 25rem;
+  }
 }

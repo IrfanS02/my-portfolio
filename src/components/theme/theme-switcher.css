@@ -1,0 +1,113 @@
+.theme-switcher {
+    position: fixed;
+    bottom: 6rem;
+    right: 1.5rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .theme-switcher-btn {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .theme-switcher-btn:hover {
+    background: var(--color-white);
+    color: var(--color-primary);
+    transform: scale(1.1);
+  }
+  
+  .theme-options {
+    margin-top: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+  }
+  
+  .theme-option {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .theme-option:hover {
+    transform: scale(1.1);
+  }
+  
+  .theme-option.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--color-primary);
+  }
+  
+  .theme-color {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media queries for tablets */
+  @media screen and (max-width: 1024px) {
+    .theme-switcher {
+      bottom: 7rem;
+    }
+  }
+  
+  /* Media queries for mobile phones */
+  @media screen and (max-width: 600px) {
+    .theme-switcher {
+      bottom: 7rem;
+      right: 1rem;
+    }
+    
+    .theme-switcher-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .theme-option {
+      width: 2rem;
+      height: 2rem;
+    }
+    
+    .theme-color {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }

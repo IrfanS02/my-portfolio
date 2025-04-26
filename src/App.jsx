@@ -6,6 +6,7 @@ import Experience from './components/experience/Experience'
 import Project from './components/project/Projects'
 import Contact from './components/contact/Contact'
 import Footer from './components/footer/Footer'
+import ThemeSwitcher from './components/theme/ThemeSwitcher'
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
       <Experience />
       <Project />
       <Contact />
+      <ThemeSwitcher />
       <Footer />
-
     </>
   )
 }
